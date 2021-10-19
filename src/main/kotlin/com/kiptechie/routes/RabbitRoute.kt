@@ -32,7 +32,7 @@ fun Route.randomRabbit() {
             HttpStatusCode.OK,
             StandardResponse(
                 true,
-                "List of random rabbits",
+                "A random rabbit",
                 rabbit = rabbits.random()
             )
         )
@@ -43,7 +43,18 @@ fun Route.randomRabbit() {
             StandardResponse(
                 true,
                 "List of all rabbits",
-                rabbits = rabbits
+                rabbits = rabbits,
+                count = rabbits.size
+            )
+        )
+    }
+    get("/rabbits:count") {
+        call.respond(
+            HttpStatusCode.OK,
+            StandardResponse(
+                true,
+                "Total number of rabbits",
+                count = rabbits.size
             )
         )
     }
