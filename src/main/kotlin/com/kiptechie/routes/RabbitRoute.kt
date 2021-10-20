@@ -66,7 +66,7 @@ fun Route.randomRabbit() {
                 HttpStatusCode.OK,
                 StandardResponse(
                     true,
-                    "List of the rabbit with id:$id",
+                    "Rabbit with id:$id",
                     rabbit = rabbits[position]
                 )
             )
