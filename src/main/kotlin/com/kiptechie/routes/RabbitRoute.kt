@@ -13,7 +13,7 @@ private val rabbits = getRabbits()
 
 fun getRabbits(): List<Rabbit> {
     val rabbits = ArrayList<Rabbit>()
-    for (i in 0..5) {
+    for (i in 0..4) {
         val id = i + 1
         val name = "Rabbit $id"
         val description = "Just a fake description $id"
