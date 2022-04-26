@@ -31,7 +31,7 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
-        arguments: build
+        arguments: chmod +x /home/runner/work/ktor-rabbits/ktor-rabbits/gradlew && build
   
   test:
 
@@ -39,7 +39,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 11
+    - name: Set up JDK 11 and Test
       uses: actions/setup-java@v3
       with:
         java-version: '11'
@@ -47,4 +47,4 @@ jobs:
     - name: Test with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
-        arguments: test
+        arguments: chmod +x /home/runner/work/ktor-rabbits/ktor-rabbits/gradlew && test
