@@ -25,7 +25,10 @@ fun getRabbits(): List<Rabbit> {
 
 fun Route.randomRabbit() {
     get("/") {
-        call.respondText("HELLO RABBITS!", contentType = ContentType.Text.Plain)
+        call.respondText(
+            "HELLO RABBITS!",
+            contentType = ContentType.Text.Plain
+        )
     }
     get("/rabbit:random") {
         call.respond(
