@@ -31,3 +31,13 @@ dependencies {
 tasks.create("stage") {
     dependsOn("installDist")
 }
+
+reporting.baseDir = file("my-reports")
+project.setProperty("testResultsDirName", "$buildDir/my-test-results")
+
+tasks.register("showDirs") {
+    doLast {
+        logger.quiet(rootDir.toPath().relativize((project.property("reportsDir") as File).toPath()).toString())
+        logger.quiet(rootDir.toPath().relativize((project.property("testResultsDir") as File).toPath()).toString())
+    }
+}
